@@ -1,0 +1,58 @@
+.content {
+    display: block;  
+}
+  
+.img-fluid {
+    height: 150px;
+    width: 100%;
+    margin: 10px auto 0;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+}
+
+.container-sm {
+    align-items: center;
+    margin: 10px auto;
+    padding: 20px;
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+    white-space: nowrap;
+    width: fit-content;
+}
+
+.bi-person-circle {
+    display: block;
+    margin-top: 20px;
+    margin-bottom: -20px;
+    font-size: 5rem;
+    text-align: center;
+}
+
+.bi-power{
+    display: block;
+    margin-bottom: -30px;
+    font-size: 2rem;
+    text-align: center;
+    color: #f70101;
+}
+
+.btn {
+    margin: 20px auto;
+    width: 250px;
+    display: block;
+}
+
+.btn-danger{
+    margin-top: 30px;
+    margin-bottom: 20px;
+    width: 130px;
+    display: block;
+}
+
+.text-primary {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+  

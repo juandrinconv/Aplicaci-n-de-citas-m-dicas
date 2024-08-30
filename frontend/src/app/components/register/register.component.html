@@ -1,0 +1,38 @@
+<div *ngIf="show_modal" id="modal" class="modal fade show" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+            <h1 id="modal_response" class="modal-title">{{ response.response }}</h1>
+        </div>
+    </div>
+</div>
+
+<img src="assets/salud_total_1.png" class="img-fluid" alt="image salud total">
+
+<div class="container-sm">
+    <h4 class="text-primary">REGISTRAR USUARIO</h4>
+    <form>
+        <div class="mb-3">
+            <label class="form-label">Nombres</label>
+            <input id = "first_name" type="text" class="form-control" placeholder="En mayúsculas; sin caracteres especiales" #first_name #required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Apellidos</label>
+            <input id = "last_name" type="text" class="form-control" placeholder="En mayúsculas; sin caracteres especiales" #last_name #required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Número de cédula</label>
+            <input id = "username" type="number" class="form-control" #username #required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Correo electrónico</label>
+            <input id = "email" type="email" class="form-control" #email #required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Contraseña</label>
+            <input id = "password" type="password" class="form-control" #password #required>
+        </div>
+    </form>
+    <button (click)="submit(first_name.value, last_name.value, username.value, email.value, password.value)" class="btn btn-primary">Registrar usuario</button>
+    <button (click)="redirect_login()" class="btn btn-primary">Regresar al inicio se sesión</button>
+    <a href="https://saludtotal.com.co/" target="_blank">Si tiene problemas con el correo electrónico, contacte al equipo de soporte</a>
+</div>

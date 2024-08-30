@@ -1,0 +1,27 @@
+<div *ngIf="show_modal" id="modal" class="modal fade show" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+            <h1 id="modal_response" class="modal-title">{{ response.response }}</h1>
+        </div>
+    </div>
+</div>
+  
+<img src="assets/salud_total_1.png" class="img-fluid" alt="Descripción de la imagen">
+
+<div class="container-sm">
+    <h4 class="text-primary">INICIO DE SESIÓN</h4>
+    <form>
+        <div class="mb-3">
+            <label class="form-label">Número de cédula</label>
+            <input type="number" class="form-control" #username required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Contraseña</label>
+            <input type="password" class="form-control" #password required>
+        </div>
+    </form>
+    <button (click)="submit(username.value, password.value)" class="btn btn-primary">Iniciar sesión</button>
+    <button (click)="redirect_register()" class="btn btn-primary">Registrarse</button>
+    <button (click)="redirect_recover_password()" class="btn btn-primary">¿Se le olvidó la contraseña?</button>
+</div>
+  

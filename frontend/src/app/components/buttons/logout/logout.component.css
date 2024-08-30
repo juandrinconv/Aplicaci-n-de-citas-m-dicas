@@ -1,0 +1,12 @@
+.btn {
+    margin: 20px auto;
+    width: 250px;
+    display: block;
+}
+
+.btn-danger{
+    margin-top: 30px;
+    margin-bottom: 20px;
+    width: 130px;
+    display: block;
+}
