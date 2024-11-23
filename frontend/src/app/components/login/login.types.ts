@@ -7,4 +7,5 @@ export type UserComplete = {
 export type UserNames = {
     first_name: string;
     last_name:  string;
+    username: string;
 }

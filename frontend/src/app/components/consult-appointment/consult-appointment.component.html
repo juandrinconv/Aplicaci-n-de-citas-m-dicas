@@ -1,0 +1,49 @@
+<div *ngIf="show_modal" id="modal" class="modal fade show" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+            <h1 id="modal_response" class="modal-title">{{ response_modal }}</h1>
+        </div>
+    </div>
+</div>
+
+<img src="assets/salud_total_1.png" class="img-fluid" alt="imagen salud total">
+<div class="container-sm">
+    <h3 class="text-primary"> {{ user_names.first_name + ' ' + user_names.last_name }} </h3>
+    <i class="bi bi-person-circle"></i>
+    <i class="bi bi-power"></i>
+    <app-logout></app-logout>
+    <h4 class="text-primary">Consultar citas médicas</h4>
+    <div class="container">
+        <div class="mb-3">
+            <label class="form-label">Digite su número de cédula</label>
+            <input type="number" class="form-control" #username required>
+        </div>
+        <button (click)="submit(username.value)" class="btn btn-primary">Consultar citas asignadas</button>
+    </div>
+</div>
+
+<div class="container-sm container_edit" *ngIf="appointments_data.dates && appointments_data.dates.length > 0">
+    <h4 class="text-primary">Citas agendadas</h4>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col" class="text-center-custom">CitaID</th>
+                <th scope="col" class="text-center-custom">Fecha</th>
+                <th scope="col" class="text-center-custom">Hora</th>
+                <th scope="col" class="text-center-custom">Especialidad</th>
+                <th scope="col" class="text-center-custom">Doctor</th>
+                <th scope="col" class="text-center-custom">Ubicación</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let date of appointments_data.dates; let i = index">
+                <td class="text-center-custom">{{ appointments_data.ids[i] }}</td>
+                <td class="text-center-custom">{{ appointments_data.dates[i] }}</td>
+                <td class="text-center-custom">{{ appointments_data.times[i] }}</td>
+                <td class="text-center-custom">{{ appointments_data.specialty[i] }}</td>
+                <td class="text-center-custom">{{ appointments_data.doctor_names[i] }}</td>
+                <td class="text-center-custom">{{ appointments_data.locations[i] }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

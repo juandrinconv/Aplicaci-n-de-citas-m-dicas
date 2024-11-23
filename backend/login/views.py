@@ -2,7 +2,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.authtoken.models import Token
-from django.contrib.auth import login as django_login, authenticate
+from django.contrib.auth import authenticate
 from login import serializers
 from django.contrib.auth.models import User
 
@@ -11,20 +11,24 @@ from django.contrib.auth.models import User
 def login(request):
     try:
         serializer1 = serializers.User_Serializer(request.data)
-        user = authenticate(
-            username=serializer1.data["username"], password=serializer1.data["password"])
+        username_received = serializer1.data["username"]
+        password_received = serializer1.data["password"]
+        user = authenticate(username=username_received,
+                            password=password_received)
+
         if user is not None:
             token, created = Token.objects.get_or_create(user=user)
             serializer2 = serializers.User_Serializer(instance=user)
-
             username = serializer2.data["username"]
             consult_user = User.objects.filter(
                 username=username).first()
             first_name = consult_user.first_name
             last_name = consult_user.last_name
+            username = consult_user.username
             user_names = {
                 "first_name": first_name,
-                'last_name': last_name
+                'last_name': last_name,
+                'username': username
             }
 
             response = Response(

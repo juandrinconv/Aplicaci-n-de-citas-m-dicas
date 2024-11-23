@@ -1,0 +1,62 @@
+<img src="assets/salud_total_1.png" class="img-fluid" alt="imagen salud total">
+<div class="container-sm">
+    <h3 class="text-primary"> {{ user_names.first_name + ' ' + user_names.last_name }} </h3>
+    <i class="bi bi-person-circle"></i>
+    <i class="bi bi-power"></i>
+    <app-logout></app-logout>
+    <h4 class="text-primary">Solicitud de cita médica</h4>
+    <div class="container">
+        <div class="form-container">
+            <label class="form-label">Seleccione el municipio de residencia:</label>
+            <select class="form-select" #municipality required>
+                <option selected>BOGOTA</option>
+                <option value="1">IBAGUE</option>
+                <option value="2">CALI</option>
+                <option value="3">ARMENIA</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-container">
+        <label class="form-label">Seleccione la especialidad:</label>
+        <select class="form-select" #specialty required>
+            <option value="MEDICINA GENERAL">MEDICINA GENERAL</option>
+            <option value="MEDICINA INTERNA">MEDICINA INTERNA</option>
+            <option value="NEUROLOGIA">NEUROLOGIA</option>
+            <option value="DERMATOLOGIA">DERMATOLOGIA</option>
+        </select>
+    </div>
+    <div class="form-container">
+        <label for="date" class="form-label">Seleccione la fecha:</label>
+        <input type="date" class="form-control" id="appointment_date" #appointment_date required>
+    </div>
+    <button (click)="ConsultAppointments(municipality.value, specialty.value, appointment_date.value)" class="btn btn-primary">Consultar disponibilidad de agenda</button>
+</div>
+
+<div class="container-sm container_edit" *ngIf="appointments_data.dates && appointments_data.dates.length > 0">
+    <h4 class="text-primary">Citas disponibles</h4>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col" class="text-center-custom">CitaID</th>
+                <th scope="col" class="text-center-custom">Fecha</th>
+                <th scope="col" class="text-center-custom">Hora</th>
+                <th scope="col" class="text-center-custom">Doctor</th>
+                <th scope="col" class="text-center-custom">Ubicación</th>
+                <th scope="col" class="text-center-custom">Asignar cita</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let date of appointments_data.dates; let i = index">
+                <td class="text-center-custom">{{ appointments_data.ids[i] }}</td>
+                <td class="text-center-custom">{{ appointments_data.dates[i] }}</td>
+                <td class="text-center-custom">{{ appointments_data.times[i] }}</td>
+                <td class="text-center-custom">{{ appointments_data.doctor_names[i] }}</td>
+                <td class="text-center-custom">{{ appointments_data.locations[i] }}</td>
+                <td class="text-center-custom">
+                    <app-assign-appointment [id]="appointments_data.ids[i]"></app-assign-appointment>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+

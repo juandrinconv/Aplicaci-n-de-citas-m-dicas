@@ -13,6 +13,7 @@ import { LogoutComponent } from "../buttons/logout/logout.component";
   templateUrl: './services.component.html',
   styleUrls: ['./services.component.css']
 })
+
 export class ServicesComponent {
   response_user_names: UserNames = {
     first_name: '',
@@ -27,6 +28,14 @@ export class ServicesComponent {
     private router: Router,
     @Inject(PLATFORM_ID) private platformId: any
   ) {}
+
+  redirect_request_a_medical_appointment() {
+    this.router.navigate(['/request_a_medical_appointment'])
+  }
+
+  redirect_consult_appointment() {
+    this.router.navigate(['/consult_appointment'])
+  }
 
   ngOnInit() {
     if (isPlatformBrowser(this.platformId)) { // Verifica si estás en el navegador

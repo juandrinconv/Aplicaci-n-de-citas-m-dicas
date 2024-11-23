@@ -31,6 +31,7 @@ export class LogoutComponent {
         localStorage.removeItem('token');
         localStorage.removeItem('first_name');
         localStorage.removeItem('last_name');
+        localStorage.removeItem('username');
         this.router.navigate(['/login']);
       },
       error: () => {

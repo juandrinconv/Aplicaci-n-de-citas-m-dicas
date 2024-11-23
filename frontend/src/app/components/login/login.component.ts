@@ -41,9 +41,11 @@ export class LoginComponent {
             const token_user = this.response.token;
             const first_name = this.response.user_names.first_name;
             const last_name = this.response.user_names.last_name;
+            const username = this.response.user_names.username;
             localStorage.setItem('token', token_user);
             localStorage.setItem('first_name', first_name);
             localStorage.setItem('last_name', last_name);
+            localStorage.setItem('username', username);
           }
           setTimeout(() => {
             this.show_modal = false,

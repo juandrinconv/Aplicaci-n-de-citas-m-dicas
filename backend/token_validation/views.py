@@ -7,6 +7,7 @@ from rest_framework.authtoken.models import Token
 @api_view(['GET'])
 def token_validation(request):
     auth_header = request.headers.get('Authorization', None)
+
     if auth_header is not None:
         try:
             token_key = auth_header.split(" ")[1]

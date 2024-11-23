@@ -7,9 +7,8 @@
             <i class="bi bi-power"></i>
             <app-logout></app-logout>
             <h4 class="text-primary">¿Qué trámite desea realizar?</h4>
-            <button id="request_appointment" type="button" class="btn btn-primary">Solicitar cita médica</button>
-            <button id="consult_cancel_appoiontment" type="button" class="btn btn-primary">Consultar o cancelar cita</button>
-            <button id="file_PQR_application" type="button" class="btn btn-primary">Radicar solicitud PQR</button>
+            <button (click)="redirect_request_a_medical_appointment()" class="btn btn-primary">Solicitar cita médica</button>
+            <button (click)="redirect_consult_appointment()" class="btn btn-primary">Consultar cita médica</button>
         </div>
     </div>
 </div>

@@ -1,0 +1,110 @@
+.img-fluid {
+    display: block;
+    height: 150px;
+    width: 700px;
+    margin: 10px auto 0;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+}
+
+.modal {
+    background-color: rgba(255, 255, 255, 0.5); 
+}
+
+.modal.show {
+    display: block;
+}
+
+.modal-content{
+    text-align: center;
+}
+
+.container-sm {
+    width: fit-content;
+    margin: 10px auto;
+    padding: 20px;
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+}
+
+.container-sm, .container_edit {
+    display: table; /* Permite que el ancho se ajuste automáticamente al contenido interno */
+    margin: 10px auto; /* Centrado horizontal */
+    padding: 20px; /* Espaciado interno */
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7); /* Sombra */
+}
+
+.table {
+    width: auto; /* Permite que la tabla tome solo el ancho necesario */
+    margin: 0 auto; /* Centra la tabla dentro del contenedor */
+    border-collapse: collapse; /* Bordes limpios */
+    table-layout: auto; /* Columnas dinámicas según el contenido */
+}
+
+.table td, .table th {  
+    text-align: center; /* Centra el texto horizontalmente */  
+    vertical-align: middle; /* Centra el texto verticalmente */  
+}
+
+.form-container {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    margin: 20px;
+}
+
+.form-select {
+    width: 250px;
+    margin-left: 10px;
+}
+
+.bi-person-circle {
+    display: block;
+    margin-top: 20px;
+    margin-bottom: -20px;
+    font-size: 5rem;
+    text-align: center;
+}
+
+.bi-power{
+    display: block;
+    margin-bottom: -30px;
+    font-size: 2rem;
+    text-align: center;
+    color: #f70101;
+}
+
+.btn {
+    margin: 20px auto;
+    width: 250px;
+    display: block;
+}
+
+.btntable {
+    width: 120px;
+}
+
+.btn-danger{
+    margin-top: 30px;
+    margin-bottom: 20px;
+    width: 130px;
+    display: block;
+}
+
+.text-primary {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-label {
+    text-align: center;
+}
+
+.form-control {
+    margin-left: 10px;
+    width: 150px;
+}

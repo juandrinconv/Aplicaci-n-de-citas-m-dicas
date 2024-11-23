@@ -41,6 +41,9 @@ INSTALLED_APPS = [
     'logout',
     'recover_password',
     'token_validation',
+    'consult_appointments',
+    'consult_appointments_true',
+    'assign_appointment',
     'corsheaders',
     'rest_framework',
     'rest_framework.authtoken',
@@ -57,6 +60,10 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
 ]
 
+AUTHENTICATION_BACKENDS = [  # AGREGADO RECIENTEMENTE
+    'django.contrib.auth.backends.ModelBackend',
+]
+
 CORS_ALLOW_CREDENTIALS = True  # AGREGADO RECIENTEMENTE
 
 CORS_ALLOWED_ORIGINS = [  # AGREGADO
@@ -68,7 +75,7 @@ CORS_ALLOWED_ORIGINS = [  # AGREGADO
 
 REST_FRAMEWORK = {  # AGREGADO
     'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework.authentication.TokenAuthentication',
+        'rest_framework.authentication.TokenAuthentication'
         # 'rest_framework.authentication.SessionAuthentication',
         # 'rest_framework.permissions.IsAuthenticated'
     ]

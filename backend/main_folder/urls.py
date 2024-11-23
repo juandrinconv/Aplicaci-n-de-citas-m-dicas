@@ -23,6 +23,9 @@ urlpatterns = [
     path('', include('logout.urls')),
     path('', include('recover_password.urls')),
     path('', include('token_validation.urls')),
+    path('', include('consult_appointments.urls')),
+    path('', include('assign_appointment.urls')),
+    path('', include('consult_appointments_true.urls')),
 
     path('api-auth/', include('rest_framework.urls'))
 ]

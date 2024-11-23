@@ -1,0 +1,9 @@
+<div *ngIf="show_modal" id="modal2" class="modal fade show" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+            <h1 id="modal_response" class="modal-title">{{ response_assign_appointment.response }}</h1>
+        </div>
+    </div>
+</div>
+
+<button (click)="AssignAppointment(id)" class="btn btn-primary"> Asignar cita </button>

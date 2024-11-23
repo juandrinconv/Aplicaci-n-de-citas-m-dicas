@@ -2,14 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { CheckAuthToken } from "./send-token.types";
-import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SendTokenService {
 
-  constructor(private http: HttpClient, private router: Router) { }
+  constructor(private http: HttpClient) { }
   
   Check_Token(token: string): Observable<CheckAuthToken> {
     const headers = new HttpHeaders({
