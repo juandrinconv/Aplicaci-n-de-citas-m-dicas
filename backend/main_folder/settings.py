@@ -66,12 +66,8 @@ AUTHENTICATION_BACKENDS = [  # AGREGADO RECIENTEMENTE
 
 CORS_ALLOW_CREDENTIALS = True  # AGREGADO RECIENTEMENTE
 
-CORS_ALLOWED_ORIGINS = [  # AGREGADO
-    "http://127.0.0.1:3000",
-    "http://127.0.0.1:4200",
-    "http://localhost:4200",
-    # Puedes agregar más dominios permitidos aquí
-]
+# Permite todos los orígenes
+CORS_ALLOW_ALL_ORIGINS = True
 
 REST_FRAMEWORK = {  # AGREGADO
     'DEFAULT_AUTHENTICATION_CLASSES': [

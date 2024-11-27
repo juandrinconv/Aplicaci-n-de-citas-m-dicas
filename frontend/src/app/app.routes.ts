@@ -15,5 +15,6 @@ export const routes: Routes = [
     { path: 'consult_appointment', component: ConsultAppointmentComponent, title: 'Consult Appointment' },
 
     { path: '', redirectTo: 'login', pathMatch: 'full' },
-    { path: '**', redirectTo: 'login' }
+    { path: '*', redirectTo: 'login' }
+
 ];

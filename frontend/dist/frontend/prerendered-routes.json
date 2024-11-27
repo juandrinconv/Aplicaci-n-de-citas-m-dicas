@@ -1,0 +1,10 @@
+{
+  "routes": [
+    "/consult_appointment",
+    "/login",
+    "/recover_password",
+    "/register",
+    "/request_a_medical_appointment",
+    "/services"
+  ]
+}
